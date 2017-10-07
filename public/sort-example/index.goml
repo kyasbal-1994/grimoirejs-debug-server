@@ -1,0 +1,13 @@
+<goml>
+  <import-material typeName="mat" src="index.sort"/>
+  <geometry type="points" name="points"/>
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="points" material="new(mat)" texture="cell.png" scale="2"></mesh>
+    <mesh geometry="sphere" material="new(unlit)" texture="cell.png" scale="1.9" id="base"></mesh>
+  </scene>
+</goml>

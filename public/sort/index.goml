@@ -1,0 +1,10 @@
+<goml>
+  <geometry type="axis" name="axis" />
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+  </scene>
+</goml>

@@ -1,0 +1,28 @@
+@Pass{
+  @BlendFuncSeparate(SRC_ALPHA, ONE_MINUS_SRC_ALPHA, ONE, ONE)
+
+  FS_PREC(mediump,float)
+  #ifdef VS
+    attribute vec3 position;
+    uniform mat4 _matPVM;
+    uniform float _time;
+    void main(){
+      gl_PointSize = 20.;
+      gl_Position = _matPVM * vec4(position.x * sin(_time / 1000.) ,position.yz, 1);
+    }
+  #endif
+  #ifdef FS
+    @{type:"color", default:"blue"}
+    uniform vec4 color;
+    @{type:"texture",default:"mu.png"}
+    uniform sampler2D texture;
+    void main(){
+      vec4 tex = texture2D(texture, gl_PointCoord);
+      if(abs(tex.a) <= 0.01){
+        discard;
+      }else{
+        gl_FragColor = tex;
+      }
+    }
+  #endif
+}

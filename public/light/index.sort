@@ -1,0 +1,30 @@
+@Pass{
+FS_PREC(mediump,float)
+
+varying vec2 vTexCoord;
+#ifdef VS
+attribute vec3 position;
+attribute vec2 texCoord;
+
+void main(){
+  gl_Position = vec4(position,1);
+  vTexCoord = texCoord;
+
+}
+
+#endif
+
+#ifdef FS
+  @{type:"color",default:"black"}
+  uniform vec4 color;
+  uniform vec2 mouse;
+  uniform vec2 _viewportSize;
+  void main(){
+    vec2 position = vec2(vTexCoord.x * _viewportSize.x, vTexCoord.y * _viewportSize.y) / min(_viewportSize.x, _viewportSize.y);
+    float size = .1;
+    float dist = length(position - mouse);
+    float alpha = pow(size/dist, 5.0);
+    gl_FragColor = vec4(color.rgb, 1. - alpha);
+  }
+#endif
+}

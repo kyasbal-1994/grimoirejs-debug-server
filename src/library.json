@@ -1,0 +1,15 @@
+{
+    "libraries": [
+        "grimoirejs",
+        "grimoirejs-math",
+        "grimoirejs-fundamental",
+        "grimoirejs-forward-shading",
+        "grimoirejs-animation",
+        "grimoirejs-gltf"
+    ],
+    "localFiles": {
+        "grimoirejs": "/Users/kyasbal/grimoire/core/",
+        "grimoirejs-math": "/Users/kyasbal/grimoire/math/",
+        "grimoirejs-fundamental": "/Users/kyasbal/grimoire/fundamental/"
+    }
+}

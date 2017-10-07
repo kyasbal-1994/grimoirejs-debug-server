@@ -1,0 +1,13 @@
+<goml>
+  <import-animation src="./translate-animation.json" typeName="anim"></import-animation>
+  <scene>
+    <camera rotation="x(-20)" position="0,5,20">
+    </camera>
+    <light rotation="x(-30d)" type="directional" />
+    <mesh albedo="blue" geometry="cube">
+      <mesh.components>
+        <Animation animation="anim" clip="translate"></Animation>
+      </mesh.components>
+    </mesh>
+  </scene>
+</goml>

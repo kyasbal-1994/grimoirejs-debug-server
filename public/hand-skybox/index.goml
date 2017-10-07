@@ -1,0 +1,8 @@
+<goml>
+  <scene>
+    <camera position="0,0,5">
+    </camera>
+    <mesh texture="image.png" id="spinner" geometry="sphere" position="0,0.5,0"></mesh>
+    <mesh texture="hand.png" position="-1.2,-1,-1" scale="3"></mesh>
+  </scene>
+</goml>

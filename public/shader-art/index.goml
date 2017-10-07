@@ -1,0 +1,11 @@
+<goml>
+  <import-material typeName="custom" src="./index.sort" />
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="sphere" scale="3" material="new(custom)" color="orange" />
+  </scene>
+</goml>

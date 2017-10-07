@@ -1,0 +1,12 @@
+<goml>
+  <import-material typeName="mat" src="index.sort"/>
+  <geometry type="points" name="points"/>
+  <scene>
+    <camera position="0,0,2">
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="points" material="new(mat)" targetBuffer="points" color="green"></mesh>
+  </scene>
+</goml>

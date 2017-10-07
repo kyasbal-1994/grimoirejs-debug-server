@@ -1,0 +1,15 @@
+<goml bgColor="gray">
+  <scene>
+    <camera position="0,5,10">
+      <camera.components>
+        <MouseCameraControl center="0,2,0"></MouseCameraControl>
+      </camera.components>
+    </camera>
+    <light rotation="y(45d)"></light>
+    <mesh geometry="cube" albedo="white" scale="2,0.1,2" position="0,-0.4,0">
+      <mesh.components>
+        <RigidBody move="false"></RigidBody>
+      </mesh.components>
+    </mesh>
+  </scene>
+</goml>

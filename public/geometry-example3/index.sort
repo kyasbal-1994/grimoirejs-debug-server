@@ -1,0 +1,23 @@
+@Pass{
+  @BlendFunc(ONE,ONE)
+  FS_PREC(mediump,float)
+  varying float vColor;
+  #ifdef VS
+    attribute vec3 position;
+    @COLOR
+    attribute float color;
+    uniform mat4 _matPVM;
+    void main(){
+      gl_PointSize = 3.;
+      gl_Position = _matPVM * vec4(position,1);
+      vColor = color;
+    }
+  #endif
+  #ifdef FS
+    uniform vec2 _viewportSize;
+    void main(){
+
+      gl_FragColor = vec4(0., 0., 0., vColor);
+    }
+  #endif
+}

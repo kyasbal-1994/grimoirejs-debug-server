@@ -1,0 +1,15 @@
+<goml>
+  <!-- <import-material typeName="mat" src="index.sort"/> -->
+  <geometry type="points" name="points"/>
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <object scale="2">
+      <mesh geometry="points" texture="texture.png"></mesh>
+      <mesh geometry="points" texture="eye.png" id="points" scale="1.003"></mesh>
+    </object>
+  </scene>
+</goml>

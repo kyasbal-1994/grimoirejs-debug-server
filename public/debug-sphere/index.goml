@@ -1,0 +1,17 @@
+<goml>
+  <import-material typeName="mat" src="index.sort"/>
+  <geometry type="points" name="points"/>
+  <scene>
+    <camera position="0,0,5">
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <light rotation="-45,0,0" intensity="20"></light>
+    <object>
+      <mesh geometry="points" albedo="green" position="-2,0,0"></mesh>
+      <mesh geometry="points" texture="texcoord.png" material="new(unlit)"></mesh>
+      <mesh geometry="points" material="new(mat)" position="2,0,0" targetBuffer="points"></mesh>
+    </object>
+  </scene>
+</goml>

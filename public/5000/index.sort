@@ -1,0 +1,30 @@
+@Pass{
+  FS_PREC(mediump,float)
+  varying vec2 vTexCoord;
+  #ifdef VS
+    @POSITION
+    attribute vec3 vPos;
+    @POSITION_BASE
+    attribute vec3 basePos;
+    uniform mat4 _matPVM;
+    uniform float _time;
+
+    void main(){
+      vTexCoord = vec2(vPos.x /2.0 +0.5, 1. - vPos.y / 2.0 + 0.5);
+      gl_Position = _matPVM * vec4(vPos + vec3(basePos.xy,basePos.z *sin(_time/1000.)) ,1);
+    }
+  #endif
+
+  #ifdef FS
+  @{type:"texture",default:"image.png"}
+  uniform sampler2D texture;
+    void main(){
+      vec4 texture = texture2D(texture,vTexCoord);
+      if(texture.w == 0.){
+        discard;
+      }else{
+        gl_FragColor = texture;
+      }
+    }
+  #endif
+}

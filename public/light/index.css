@@ -1,0 +1,22 @@
+body, html, .canvas-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.canvas-container {
+    z-index: 10;
+    position: absolute;
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+}

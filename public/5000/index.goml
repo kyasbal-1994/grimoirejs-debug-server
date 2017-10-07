@@ -1,0 +1,12 @@
+<goml>
+  <import-material typeName="particle" src="./index.sort"/>
+  <geometry type="points-cloud" name="points-cloud"/>
+  <scene>
+    <camera position="0,0,1">
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh material="new(particle)" geometry="points-cloud" scale="0.1"/>
+  </scene>
+</goml>

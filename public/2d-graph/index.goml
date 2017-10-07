@@ -1,0 +1,18 @@
+<goml>
+  <import-material typeName="mat" src="index.sort"/>
+  <geometry type="points" name="points"/>
+  <geometry type="axis" name="axis"/>
+  <scene>
+    <camera far="1000" position="0,0,200">
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <object id="base">
+      <object position="-50,-50,0">
+        <mesh geometry="points" material="new(mat)"></mesh>
+        <mesh geometry="axis" material="new(mat)" color="black"></mesh>
+      </object>
+    </object>
+  </scene>
+</goml>

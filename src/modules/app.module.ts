@@ -1,6 +1,7 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
+import { LibModule } from "./lib.module";
 
 @Module({
-    modules: [],
+    modules: [LibModule],
 })
-export class ApplicationModule {}
+export class ApplicationModule { }

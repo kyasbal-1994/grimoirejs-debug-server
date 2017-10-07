@@ -1,0 +1,20 @@
+<goml>
+  <import-material typeName="mat" src="index.sort"/>
+  <geometry type="points" name="points"/>
+  <scene>
+    <camera rotation="-60,100,0" position="0,5,0">
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="points" material="new(mat)" texture="cell.png" id="shell">
+      <mesh geometry="sphere" material="new(unlit)" texture="cell.png" scale="0.98" id="base"></mesh>
+    </mesh>
+    <mesh geometry="points" material="new(mat)" texture="cell.png" id="shell" position="2,0,0">
+      <mesh geometry="sphere" material="new(unlit)" texture="cell.png" scale="0.98" id="base"></mesh>
+    </mesh>
+    <mesh geometry="points" material="new(mat)" texture="cell.png" id="shell" position="-2,0,0">
+      <mesh geometry="sphere" material="new(unlit)" texture="cell.png" scale="0.98" id="base"></mesh>
+    </mesh>
+  </scene>
+</goml>

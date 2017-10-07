@@ -1,0 +1,19 @@
+@Pass{
+  @BlendFunc(ONE,ONE)
+  FS_PREC(mediump,float)
+  #ifdef VS
+    attribute vec3 position;
+    uniform mat4 _matPVM;
+    void main(){
+      gl_PointSize = 4.;
+      gl_Position = _matPVM * vec4(position, 1.);
+    }
+  #endif
+  #ifdef FS
+    @{type:"color", default:"blue"}
+    uniform vec4 color;
+    void main(){
+      gl_FragColor = color;
+    }
+  #endif
+}
