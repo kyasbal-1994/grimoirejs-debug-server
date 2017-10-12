@@ -16,14 +16,14 @@ import IStaticFileRemap from "../middlewares/Schema/IStaticFileRemap";
 export class LibModule implements NestModule {
     public configure(consumer: MiddlewaresConsumer): void | MiddlewaresConsumer {
         consumer.apply(RemapStaticFile).with([{
-            virtualPath: "/publi../version-control.js",
+            virtualPath: "/public/version-control.js",
             actualPath: join(__dirname, "../../dist/bundle.js"),
         },
         {
-            virtualPath: "/publi../version-control.js.map",
+            virtualPath: "/public/version-control.js.map",
             actualPath: join(__dirname, "../../dist/bundle.js.map"),
         }] as IStaticFileRemap[]).forRoutes({
-            path: "/publi../version-control.js*", method: RequestMethod.GET,
+            path: "/public/version-control.js*", method: RequestMethod.GET,
         });
         consumer.apply([express.static(join(__dirname, "/../..")), ServeIndex(join(__dirname, "/../.."))]).forRoutes({
             path: "/public/**", method: RequestMethod.ALL,
